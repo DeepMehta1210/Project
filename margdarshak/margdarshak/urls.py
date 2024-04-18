@@ -22,6 +22,7 @@ from awsapi.views import (
     ClusterListCreate, ClusterRetrieveUpdateDestroy,
     WLSUListCreate, WLSURetrieveUpdateDestroy,
     CedativeListCreate, CedativeRetrieveUpdateDestroy,
+    get_water_level_data
 )
 
 urlpatterns = [
@@ -36,4 +37,5 @@ urlpatterns = [
     path('cedatives/', CedativeListCreate.as_view(), name='cedative-list'),
     path('cedatives/<pk>/', CedativeRetrieveUpdateDestroy.as_view(), name='cedative-detail'),
     path("admin/", admin.site.urls),
+    path("get_water_level_data/",get_water_level_data,name="get_water_level_data")
 ]

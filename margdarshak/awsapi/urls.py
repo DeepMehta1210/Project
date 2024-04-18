@@ -5,6 +5,7 @@ from .views import (
     ClusterListCreate, ClusterRetrieveUpdateDestroy,
     WLSUListCreate, WLSURetrieveUpdateDestroy,
     CedativeListCreate, CedativeRetrieveUpdateDestroy,
+    get_water_level_data,
 )
 
 urlpatterns = [
@@ -18,4 +19,6 @@ urlpatterns = [
     path('wlsus/<pk>/', WLSURetrieveUpdateDestroy.as_view(), name='wlsu-detail'),
     path('cedatives/', CedativeListCreate.as_view(), name='cedative-list'),
     path('cedatives/<pk>/', CedativeRetrieveUpdateDestroy.as_view(), name='cedative-detail'),
+    path('get_water_level_data/', get_water_level_data, name='get_water_level_data'),
+    # path('get_water_level_data/', method_not_allowed, name='method_not_allowed'),  # Add this line
 ]
